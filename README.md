@@ -3,330 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPN MASTER 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>JAFETH NTIGAMAGWA | Web Developer & Python Programmer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* === CSS Styles === */
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             margin: 0;
-            color: #fff;
-            overflow-x: hidden;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
         }
-
         .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        /* Header */
+        header {
+            background: #35424a;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-            width: 85%;
-            max-width: 600px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
         }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(106,17,203,0.2) 0%, rgba(37,117,252,0.1) 50%, transparent 70%);
-            animation: rotate 20s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .title-box {
-            background: linear-gradient(45deg, #6a11cb, #2575fc);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .title-box::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to bottom right, transparent, rgba(255,255,255,0.2), transparent);
-            transform: rotate(30deg);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { left: -100%; }
-            20% { left: 100%; }
-            100% { left: 100%; }
-        }
-
-        h1 {
-            font-size: 2.8rem;
+        header h1 {
             margin: 0;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            background: linear-gradient(to right, #fff, #fdd835);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 1px;
+            font-size: 2.5em;
         }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: #a5d6a7;
-            margin-top: 10px;
-            font-weight: 400;
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
         }
-
-        .status-box {
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 25px 0;
-            position: relative;
+        /* Sections */
+        section {
+            padding: 20px 0;
+            border-bottom: 1px solid #e1e1e1;
         }
-
-        .status-text {
-            font-size: 1.4rem;
-            margin: 0;
-            color: #fdd835;
-            font-weight: 700;
+        h2 {
+            color: #35424a;
+            text-align: center;
+            margin-bottom: 20px;
         }
-
-        .emoji-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .emoji {
-            font-size: 2.5rem;
-            animation: float 3s ease-in-out infinite;
-            text-shadow: 0 0 10px rgba(253, 216, 53, 0.7);
-        }
-
-        .emoji:nth-child(1) { animation-delay: 0s; }
-        .emoji:nth-child(2) { animation-delay: 0.5s; }
-        .emoji:nth-child(3) { animation-delay: 1s; }
-        .emoji:nth-child(4) { animation-delay: 1.5s; }
-        .emoji:nth-child(5) { animation-delay: 2s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        .glow {
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fdd835, 0 0 20px #fdd835; }
-            to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fdd835, 0 0 40px #fdd835; }
-        }
-
-        .features {
+        /* Skills Grid */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 25px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-
-        .feature-box {
-            background: rgba(106, 17, 203, 0.2);
-            border: 1px solid rgba(106, 17, 203, 0.3);
-            border-radius: 8px;
-            padding: 15px;
-            transition: all 0.3s ease;
+        .skill-card, .project-card, .edu-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
         }
-
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
-            background: rgba(106, 17, 203, 0.3);
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-
-        .feature-title {
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #a5d6a7;
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
         }
-
-        .feature-desc {
-            font-size: 0.9rem;
-            color: #e0e0e0;
-        }
-
-        .footer {
-            margin-top: 30px;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .author {
-            color: #fdd835;
-            font-weight: 700;
+        .project-links a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #35424a;
             text-decoration: none;
-            position: relative;
+            font-weight: bold;
         }
-
-        .author::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #fdd835;
-            transition: width 0.3s ease;
+        /* Contact Info */
+        .contact-info {
+            text-align: center;
         }
-
-        .author:hover::after {
-            width: 100%;
+        .contact-info a {
+            color: #35424a;
+            text-decoration: none;
         }
-
-        .quantum-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+        .contact-info i {
+            margin-right: 10px;
         }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(253, 216, 53, 0.7);
-            border-radius: 50%;
-            animation: particle-float linear infinite;
-        }
-
-        @keyframes particle-float {
-            0% { transform: translateY(0) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+        /* Footer */
+        footer {
+            background: #35424a;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="quantum-particles" id="particles"></div>
-    
-    <div class="container">
-        <div class="title-box">
-            <color="red"</>
-            <h1>VPN MASTER</h1>
-            <p class="subtitle">Experience the Next Generation AI</p>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>JAFETH NTIGAMAGWA</h1>
+            <p>Web Developer | Python Programmer | Database Enthusiast</p>
         </div>
-        
-        <div class="status-box">
-            <p class="status-text glow">SYSTEM STATUS: IN PROGRESS</p>
-        </div>
-        
-        <div class="emoji-container">
-            <div class="emoji">🔥</div>
-            <div class="emoji">⚡</div>
-            <div class="emoji">💡</div>
-            <div class="emoji">✨</div>
-            <div class="emoji">🌟</div>
-        </div>
-        
-        <p>Enjoy the all-the vpn master services <span class="glow" style="font-weight:700;">VPN MASTER technology</span> experience!</p>
-        
-        <div class="features">
-            <div class="feature-box">
-                <div class="feature-title">Quantum Speed</div>
-                <div class="feature-desc">Lightning-fast responses powered by quantum algorithms</div>
-            </div>
-            <div class="feature-box">
-                <div class="feature-title">AI Evolution</div>
-                <div class="feature-desc">Continuously learning and improving neural networks</div>
-            </div>
-            <div class="feature-box">
-                <div class="feature-title">Secure</div>
-                <div class="feature-desc">Military-grade encryption for all communications</div>
-            </div>
-            <div class="feature-box">
-                <div class="feature-title">24/7 Uptime</div>
-                <div class="feature-desc">99.99% availability with global server distribution</div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            Crafted with <span style="color:#f44336;">❤</span> by <a href="#" class="author">JAFETH FILIMON</a>
-        </div>
-    </div>
+    </header>
 
+    <!-- About Me Section -->
+    <section id="about">
+        <div class="container">
+            <h2>👨‍💻 About Me</h2>
+            <p>
+                I am a passionate <strong>web developer and Python programmer</strong> with a strong interest in <strong>databases and backend systems</strong>. 
+                Currently pursuing a <strong>Bachelor of Science with Education</strong> at <strong>Sokoine University of Agriculture (SUA)</strong>, 
+                I am also enhancing my technical skills through the <strong>Power Learn Project (PLP) Scholarship</strong> in <strong>Software Development</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>🛠 Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🌐 Web Development</h3>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React (Basic)</li>
+                        <li>Django/Flask (Python)</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>🐍 Python Programming</h3>
+                    <ul>
+                        <li>Scripting & Automation</li>
+                        <li>Pandas, NumPy</li>
+                        <li>Web Scraping</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>🗃 Databases</h3>
+                    <ul>
+                        <li>PostgreSQL, MySQL</li>
+                        <li>MongoDB (Basic)</li>
+                        <li>Django ORM, SQLAlchemy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>🚀 Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>Student Management System (Django)</h3>
+                    <p>A web app to manage student records with PostgreSQL.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/student-mgmt" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://your-demo-link.com" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>Python Data Analysis</h3>
+                    <p>Analyzed agricultural datasets using Pandas and Matplotlib.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/data-analysis" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3>Portfolio Website (HTML/CSS)</h3>
+                    <p>This responsive portfolio built from scratch.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/yourusername/portfolio" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>🎓 Education & Training</h2>
+            <div class="edu-card">
+                <h3>Sokoine University of Agriculture (SUA)</h3>
+                <p><strong>Bachelor of Science with Education</strong> | 202X - Present</p>
+            </div>
+            <div class="edu-card">
+                <h3>Power Learn Project (PLP) – Software Development</h3>
+                <p><strong>Fully Funded Scholarship</strong> | 2024 - Present</p>
+                <p>Intensive training in full-stack development, Python, and databases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>📞 Contact Me</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> <a href="mailto:jafethfilimon321@gmail.com">jafethfilimon321@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+255623647378">+255 623 647 378</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> JAFETH NTIGAMAGWA | Built with HTML & CSS</p>
+        </div>
+    </footer>
+
+    <!-- === JavaScript === -->
     <script>
-        // Create quantum particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random position
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100 + 100; // Start below viewport
-                particle.style.left = `${posX}%`;
-                particle.style.top = `${posY}%`;
-                
-                // Random size
-                const size = Math.random() * 3 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Random animation duration
-                const duration = Math.random() * 10 + 10;
-                particle.style.animationDuration = `${duration}s`;
-                
-                // Random delay
-                const delay = Math.random() * 10;
-                particle.style.animationDelay = `${delay}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
-        // Initialize particles
-        createParticles();
-        
-        // Add hover effect to container
-        const container = document.querySelector('.container');
-        container.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            container.style.transform = `perspective(1000px) rotateX(${(y - 0.5) * 5}deg) rotateY(${(x - 0.5) * -5}deg)`;
-        });
-        
-        container.addEventListener('mouseleave', () => {
-            container.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        // Dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scrolling (if you add navigation later)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
